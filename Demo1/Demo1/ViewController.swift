@@ -69,7 +69,7 @@ extension ViewController {
         
         view.backgroundColor = UIColor.whiteColor()
         
-        view.addSubview(titleLabel)
+        view.insertSubview(titleLabel, atIndex: 0)
         
         titleLabel.snp_makeConstraints { (make) -> Void in
             make.center.equalTo(view)

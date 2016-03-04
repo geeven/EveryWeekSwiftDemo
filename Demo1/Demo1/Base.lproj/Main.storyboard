@@ -43,10 +43,26 @@
         <scene sceneID="bzd-k7-Uu2">
             <objects>
                 <viewController id="dbD-nB-DsW" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vmZ-ko-ZTo"/>
+                        <viewControllerLayoutGuide type="bottom" id="3jF-AR-r0l"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="enu-gG-eQq">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="580"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="请向右轻扫" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mf-4A-Cml">
+                                <rect key="frame" x="266" y="280" width="68" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.456449145" green="1" blue="0.39737706290000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="5mf-4A-Cml" firstAttribute="centerX" secondItem="enu-gG-eQq" secondAttribute="centerX" id="u9H-2K-9nv"/>
+                            <constraint firstItem="5mf-4A-Cml" firstAttribute="centerY" secondItem="enu-gG-eQq" secondAttribute="centerY" id="ud9-5j-R3C"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R4e-6H-eS9" userLabel="First Responder" sceneMemberID="firstResponder"/>
