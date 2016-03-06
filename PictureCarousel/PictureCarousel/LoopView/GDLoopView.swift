@@ -76,14 +76,38 @@ extension GDLoopView {
         
         setContentOffset(CGPointMake(CGFloat(index) * bounds.width, 0), animated: true)
     }
+}
+
+//MARK: - UIScrollViewDelegate
+extension GDLoopView {
     
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
         timer?.invalidate()
         timer = nil
     }
+    
     func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        
+
         addTimer()
+    }
+
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        var pageNo = Int(scrollView.contentOffset.x / scrollView.bounds.width)
+        
+        //判断是第一页还是最后一页
+        if(pageNo == (numberOfItemsInSection(0) - 1)) || (pageNo == 1) {
+            pageNo = self.dataArr.count - (pageNo == 0 ? 0 : 1)
+            
+            scrollView.contentOffset = CGPointMake(CGFloat(pageNo) * scrollView.bounds.width, 0)
+        }
+        index = NSInteger(pageNo)
+    }
+    
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+        let page = Int(scrollView.contentOffset.x / scrollView.bounds.width + 0.5)
+        didSelectedCallBaCk(index: page % self.dataArr.count)
     }
     
 }
@@ -110,22 +134,12 @@ extension GDLoopView:UICollectionViewDataSource,UICollectionViewDelegate {
         return cell
     }
     
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        var pageNo = Int(scrollView.contentOffset.x / scrollView.bounds.width)
-        
-        //判断是第一页还是最后一页
-        if(pageNo == (numberOfItemsInSection(0) - 1)) || (pageNo == 1) {
-            pageNo = self.dataArr.count - (pageNo == 0 ? 0 : 1)
-            
-            scrollView.contentOffset = CGPointMake(CGFloat(pageNo) * scrollView.bounds.width, 0)
-        }
-        index = NSInteger(pageNo)
-    }
-    
+    //MARK: -UICollectionViewDelegate
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         didSelectedCallBaCk(index: indexPath.item % self.dataArr.count)
         index = indexPath.item
     }
+    
 }
 
