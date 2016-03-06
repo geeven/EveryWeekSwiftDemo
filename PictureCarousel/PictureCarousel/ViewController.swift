@@ -61,13 +61,35 @@ extension ViewController {
         view.addSubview(pageControl)
         pageControl.setValue(UIImage(named: "compose_keyboard_dot_normal"), forKey: "_pageImage")
         pageControl.setValue(UIImage(named: "compose_keyboard_dot_selected"), forKey: "_currentPageImage")
+        
+        pageControl.hidesForSinglePage = true
+        pageControl.userInteractionEnabled = false
         pageControl.numberOfPages = self.urls.count
         pageControl.currentPage = 0
-        pageControl.snp_makeConstraints { (make) -> Void in
-            
-            make.centerX.equalTo(self.view)
-            make.bottom.equalTo(self.LoopView!)
-        }
+        
+        pageControl.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addConstraint(NSLayoutConstraint(
+            item: pageControl,
+            attribute: .CenterX,
+            relatedBy: .Equal,
+            toItem: self.view,
+            attribute: .CenterX,
+            multiplier: 1.0,
+            constant: 0))
+        self.view.addConstraint(NSLayoutConstraint(
+            item: pageControl,
+            attribute: .Bottom,
+            relatedBy: .Equal,
+            toItem: LoopView,
+            attribute: .Bottom,
+            multiplier: 1.0,
+            constant: 0))
+        
+//        pageControl.snp_makeConstraints { (make) -> Void in
+//            
+//            make.centerX.equalTo(self.view)
+//            make.bottom.equalTo(self.LoopView!)
+//        }
   
     }
     
