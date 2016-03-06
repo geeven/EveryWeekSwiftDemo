@@ -47,7 +47,7 @@ extension ViewController {
         view.backgroundColor = UIColor.whiteColor()
         
         LoopView = GDLoopView(urls: urls, didSelectedCallBack: { (index) -> () in
-            //
+            
             print("选中了第\(index)个")
         })
         
