@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DrawingBoard" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QAR-R9-kPb">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="清屏" id="ZtB-96-RZT">
+                                        <connections>
+                                            <action selector="clearnScreen:" destination="BYZ-38-t0r" id="GvY-76-885"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="FHP-Wh-LAo"/>
+                                    <barButtonItem title="回退" id="Y0U-8X-6vV">
+                                        <connections>
+                                            <action selector="undo:" destination="BYZ-38-t0r" id="1E1-c7-0xD"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="8X8-xw-Sub"/>
+                                    <barButtonItem title="橡皮擦" id="3rI-gM-giq">
+                                        <connections>
+                                            <action selector="eraser:" destination="BYZ-38-t0r" id="ur7-aW-5hg"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="gfp-3K-Mm8"/>
+                                    <barButtonItem title="照片" id="SVK-Pg-1EZ">
+                                        <connections>
+                                            <action selector="choosePicture:" destination="BYZ-38-t0r" id="YDP-fq-C0T"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="uR9-Hg-76d"/>
+                                    <barButtonItem title="ColorPicker" id="Trn-zu-obM">
+                                        <connections>
+                                            <action selector="chooseColor:" destination="BYZ-38-t0r" id="chN-Z4-AqE"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Ru3-D2-fYF"/>
+                                    <barButtonItem title="LineWidth" id="Rc4-ER-k4k">
+                                        <connections>
+                                            <action selector="setLineWidth:" destination="BYZ-38-t0r" id="cbl-FU-cBl"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hYX-As-a2K"/>
+                                    <barButtonItem title="保存" id="bG4-2j-QdO">
+                                        <connections>
+                                            <action selector="saveDrawing:" destination="BYZ-38-t0r" id="paG-fj-gXw"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QAR-R9-kPb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="CCu-EV-Lkd"/>
+                            <constraint firstItem="QAR-R9-kPb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ppu-hf-1b6"/>
+                            <constraint firstAttribute="trailing" secondItem="QAR-R9-kPb" secondAttribute="trailing" id="gCq-x8-Xdm"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
